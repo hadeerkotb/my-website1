@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+ <link rel="stylesheet" href="styie.css">
+
+<link rel="stylesheet" href="script.js">
+<style>
+    #aboutSection {
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #000;
+      line-height: 1.8;
+    }
+    #aboutSection h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #21d7c1;
+    }
+    #aboutSection p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    #contactSection {
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #0e616e;
+      line-height: 2;
+    }
+    #contactSection h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #5ababc;
+    }
+    #contactSection a {
+      display: block;
+      color: #daf9ff;
+      font-size: 1.1rem;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    #contactSection a:hover {
+      color: #21d7c1;
+    }
+    @media screen and (max-width: 768px) {
+      #aboutSection h2, #contactSection h2 {
+        font-size: 1.5rem;
+      }
+      #aboutSection p, #contactSection a {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div id="mainListDiv" class="main_list">
+      <ul class="navlinks">
+        <li><a href="#aboutSection">About</a></li>
+        <li><a href="#" id="contactLink">Contact</a></li>
+        <li><a href="#" id="skillsLink">Skills</a></li>
+      </ul>
+    </div>
+    <span class="navTrigger"><i class="fas fa-bars"></i></span>
+  </nav>
+  <section class="home"></section>
+  <section class="hero-text-section">
+    <div class="hero-text">
+      <h1>Welcome to Hadeer Kotb's Portfolio</h1>
+      <p>Frontend Developer | Robotics | Machine Learning Enthusiast</p>
+    </div>
+  </section>
+  <section id="aboutSection">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate Software Engineer with a strong interest in web
+      development. Currently focusing on Frontend technologies, I also work on
+      integrated hardware and software projects. I am eager to learn, adapt,
+      and continuously grow both technically and personally.
+    </p>
+  </section>
+  <section id="skillsSection" class="skills-visible">
+    <div class="wrapper">
+      <div class="inner">
+        <div class="card"><div class="img"><p>Python</p></div></div>
+        <div class="card"><div class="img"><p>C</p></div></div>
+        <div class="card"><div class="img"><p>JavaScript</p></div></div>
+        <div class="card"><div class="img"><p>HTML</p></div></div>
+        <div class="card"><div class="img"><p>CSS</p></div></div>
+        <div class="card"><div class="img"><p>Machine Learning</p></div></div>
+        <div class="card"><div class="img"><p>Robotics</p></div></div>
+        <div class="card"><div class="img"><p>Frontend Dev</p></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="contactSection">
+    <h2>Contact Me</h2>
+    <a href="mailto:hadeerkotb45@gmail.com" target="_blank">📧 hadeerkotb45@gmail.com</a>
+    <a href="mailto:452006h@gmail.com" target="_blank">📧 452006h@gmail.com</a>
+    <a href="https://t.me/hadeerkotb" target="_blank">Telegram: @hadeerkotb</a>
+    <a href="https://github.com/hadeerkotb" target="_blank">GitHub: github.com/hadeerkotb</a>
+    <a href="https://www.linkedin.com/in/hadeer-kotb-363851361?trk=contact-info" target="_blank">LinkedIn: hadeer-kotb</a>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    $(window).scroll(function () {
+      if ($(document).scrollTop() > 50) {
+        $(".nav").addClass("affix");
+      } else {
+        $(".nav").removeClass("affix");
+      }
+    });
+    $(".navTrigger").click(function () {
+      $(this).toggleClass("active");
+      $("#mainListDiv").toggleClass("show_list");
+      $("#mainListDiv").fadeIn();
+    });
+    document.getElementById("skillsLink").addEventListener("click", function (e) {
+      e.preventDefault();
+      const skillsSection = document.getElementById("skillsSection");
+      skillsSection.style.display = "block";
+      skillsSection.scrollIntoView({ behavior: "smooth" });
+    });
+    document.getElementById("contactLink").addEventListener("click", function (e) {
+      e.preventDefault();
+      const contactSection = document.getElementById("contactSection");
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
+
+
+
